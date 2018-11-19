@@ -1,0 +1,98 @@
+{
+  "name": "Table for Benchmark",
+  "description": "Create a table of 6 measure for a benchmark.",
+  "author": "Baptiste Durand (QLIK)",
+  "library": "My-Table-Library",
+  "meta": {
+    "type": "table"
+  },
+  "properties": {
+    "measures": {
+      "min": 5,
+      "max": 5
+    },
+    "dimensions": {
+      "max": 1,
+      "min": 1
+    },
+    "sorting": true,
+    "sections": [
+      {
+        "type": "header",
+        "order": 0,
+        "parent": "qw-pe-dropzone2-0",
+        "ref": "header1",
+        "label": "Header"
+      },
+      {
+        "type": "header",
+        "order": 1,
+        "parent": "qw-pe-dropzone2-1",
+        "ref": "header2",
+        "label": "Benchmark layout"
+      }
+    ],
+    "settings": [
+      {
+        "type": "string",
+        "expression": "optional",
+        "defaultValue": "",
+        "order": 0,
+        "parent": "header1",
+        "ref": "benchmarkHeader",
+        "label": "Label"
+      },
+      {
+        "component": "dropdown",
+        "type": "string",
+        "defaultValue": "200%",
+        "options": [
+          {
+            "label": "Normal",
+            "value": "100%"
+          },
+          {
+            "label": "Middle",
+            "value": "150%"
+          },
+          {
+            "label": "Tall",
+            "value": "200%"
+          }
+        ],
+        "order": 1,
+        "parent": "header1",
+        "ref": "headerSize",
+        "label": "Size"
+      },
+      {
+        "type": "string",
+        "expression": "optional",
+        "defaultValue": "3",
+        "order": 0,
+        "parent": "header2",
+        "ref": "columnNumber",
+        "label": "Number of columns"
+      },
+      {
+        "type": "string",
+        "expression": "optional",
+        "defaultValue": "#e97d68",
+        "order": 1,
+        "parent": "header2",
+        "ref": "kpiColor",
+        "label": "Main KPI Color"
+      },
+      {
+        "type": "string",
+        "expression": "optional",
+        "defaultValue": "",
+        "order": 2,
+        "parent": "header1",
+        "ref": "dimPrefix",
+        "label": "Prefix dimension"
+      }
+    ]
+  },
+  "dependencies": {}
+}

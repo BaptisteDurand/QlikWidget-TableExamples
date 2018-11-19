@@ -1,0 +1,10 @@
+{
+  "name": "My-Table-Library-Examples",
+  "description": "A widget library of 2 examples of simple custom tables.\nIniti Version : 0.1",
+  "type": "widget-library",
+  "widgets": [
+    "6c983a96-0bca-4505-b397-fde5e6458496",
+    "b119f636-2f5e-4c47-88b1-7a39262ef51c",
+    "2f816da3-1e65-4af9-996b-a58d187a0782"
+  ]
+}

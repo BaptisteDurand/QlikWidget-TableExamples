@@ -1,0 +1,40 @@
+{
+  "name": "ExportTable",
+  "description": "",
+  "author": "",
+  "library": "My-Table-Library-Examples",
+  "meta": {
+    "type": "navigation"
+  },
+  "properties": {
+    "measures": {
+      "min": 0,
+      "max": 5
+    },
+    "dimensions": {
+      "max": 10,
+      "min": 0
+    },
+    "sections": [
+      {
+        "type": "header",
+        "order": 0,
+        "parent": "qw-pe-dropzone1-0",
+        "ref": "header1",
+        "label": "Label"
+      }
+    ],
+    "settings": [
+      {
+        "type": "string",
+        "expression": "optional",
+        "defaultValue": "Export Table",
+        "order": 0,
+        "parent": "header1",
+        "ref": "buttonLabel",
+        "label": "Text button"
+      }
+    ]
+  },
+  "dependencies": {}
+}

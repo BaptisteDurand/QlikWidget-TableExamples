@@ -1,0 +1,137 @@
+{
+  "name": "(Dynamic) Table : 2 groups of 3 measures",
+  "description": "A table to group 6 measures in 2 part.",
+  "author": "Baptiste Durand (QLIK)",
+  "library": "My-Table-Library",
+  "meta": {
+    "type": "table"
+  },
+  "properties": {
+    "measures": {
+      "min": 6,
+      "max": 6
+    },
+    "dimensions": {
+      "max": 1,
+      "min": 1
+    },
+    "sections": [
+      {
+        "type": "header",
+        "order": 0,
+        "parent": "qw-pe-dropzone1-0",
+        "ref": "header1",
+        "label": "Headers"
+      },
+      {
+        "type": "header",
+        "order": 1,
+        "parent": "qw-pe-dropzone2-1",
+        "ref": "header2",
+        "label": "Colors"
+      },
+      {
+        "type": "header",
+        "order": 2,
+        "parent": "qw-pe-dropzone2-2",
+        "ref": "header3",
+        "label": "Total"
+      }
+    ],
+    "settings": [
+      {
+        "type": "string",
+        "expression": "optional",
+        "defaultValue": "Group 1",
+        "order": 1,
+        "parent": "header1",
+        "ref": "myHeaderGroup1",
+        "label": "Header first group"
+      },
+      {
+        "type": "string",
+        "expression": "optional",
+        "defaultValue": "Group 2",
+        "order": 2,
+        "parent": "header1",
+        "ref": "myHeaderGroup2",
+        "label": "Header second group"
+      },
+      {
+        "type": "string",
+        "expression": "optional",
+        "defaultValue": "€",
+        "order": 3,
+        "parent": "header1",
+        "ref": "Units",
+        "label": "Unit"
+      },
+      {
+        "type": "string",
+        "expression": "optional",
+        "defaultValue": "My table header",
+        "order": 0,
+        "parent": "header1",
+        "ref": "myHeader",
+        "label": "Header"
+      },
+      {
+        "component": "dropdown",
+        "type": "string",
+        "defaultValue": "#808080",
+        "options": [
+          {
+            "label": "Grey",
+            "value": "#808080"
+          },
+          {
+            "label": "Orang",
+            "value": "#f8981d"
+          },
+          {
+            "label": "Black",
+            "value": "#4D4D4D"
+          },
+          {
+            "label": "Green",
+            "value": "#009845"
+          }
+        ],
+        "order": 0,
+        "parent": "header2",
+        "ref": "textColor",
+        "label": "Header Text Color"
+      },
+      {
+        "type": "string",
+        "expression": "optional",
+        "defaultValue": "Total",
+        "order": 1,
+        "parent": "header3",
+        "ref": "totalName",
+        "label": "Label"
+      },
+      {
+        "component": "switch",
+        "type": "boolean",
+        "defaultValue": false,
+        "options": [
+          {
+            "value": true,
+            "label": "Show"
+          },
+          {
+            "value": false,
+            "label": "Hide"
+          }
+        ],
+        "order": 0,
+        "parent": "header3",
+        "ref": "showTotal",
+        "label": "Display Total Row"
+      }
+    ],
+    "sorting": true
+  },
+  "dependencies": {}
+}

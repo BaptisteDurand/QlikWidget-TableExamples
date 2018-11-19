@@ -1,0 +1,144 @@
+<style>///////////////// LESS Variables //////////////
+@headerSize: {{settings.headerSize}};
+@columnNumber: {{settings.columnNumber}};
+@kpiColor: {{settings.kpiColor}};
+
+//////////////////  CSS //////////////////////
+.component-header h1 {
+		text-align: center;
+		font-size : @headerSize;
+	}
+
+.wrapper {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;	
+
+	.component-list {
+	  padding: 0;
+	  margin: 0;
+	  list-style: none;
+
+	  display: -webkit-box;
+	  display: -moz-box;
+	  display: -ms-flexbox;
+	  display: -webkit-flex;
+	  display: flex;
+
+	  -webkit-flex-flow: row wrap;
+	  justify-content: space-around;
+	}
+		
+	/* 
+	.component-container {
+		width:  100/{{settings.columnNumber}}%;
+		margin: 4em auto;
+	}
+	*/	
+	.component-dimension-header{
+		text-align : center;
+		width : auto;
+    	padding : 1em;
+		color : @kpiColor; //#e97d68;
+	}
+	
+	.component-dimension-header h2{
+		text-align: center;
+		text-transform: uppercase;
+		width: auto;
+    	padding: 1em;
+		font-size: 100%;
+	}
+	
+	.component-kpi span{
+		display : block;
+	}
+	
+	.kpi-value{
+		font-size: 200%;
+	}
+	
+	.component-body{
+	}
+	
+	.component-list li 	{
+		list-style: none;
+		display: list-item;
+	}
+	
+	/*
+	.component-list > li {
+		float: left;
+		list-style: none;
+		width:  100/{{settings.columnNumber}}%;
+	}
+	*/
+	
+	.component-details li {
+		/* float: none; */
+		/* width: auto; */
+    	padding: 1em;
+		text-align: center;
+	}
+	
+	.component-details li:nth-of-type(2n+1) {
+		background-color: rgba(23, 61, 80, 0.06);
+	}
+	
+	.component-details em {
+		font: inherit;
+		font-weight: bold;
+	}
+	
+	.component-footer{
+		text-align : center;
+		padding: 1em;
+	}
+}
+
+@media screen and (min-width: 940px) and (min-height: 481px) {
+	.component-list-flex-item {
+		width:  100/{{settings.columnNumber}}%;
+	}
+}
+@media screen and (max-width: 640px), screen and (max-height: 480px) {
+	.component-list-flex-item {
+		width:  100%;
+	}
+}</style>
+<div><div id="benchmarktable">
+	<header class="component-header" ng-if="settings.benchmarkHeader">
+		<h1>{{settings.benchmarkHeader}}</h1> 
+	</header>
+
+	<section class="wrapper">
+		<ul class="component-list">
+			<li class="component-list-flex-item" ng-repeat="row in data.rows">
+				<header class="component-dimension-header">
+					<h2>{{settings.dimPrefix}}{{row.cells[0].qText}}</h2>
+
+					<div class="component-kpi">
+						<span class="kpi-value">{{row.cells[1].qText}}</span>
+						<span class="kpi-text">{{layout.qHyperCube.qMeasureInfo[0].qFallbackTitle}}</span>
+					</div>
+				</header> <!-- .component-header -->
+
+				<section class="component-body">
+					<ul class="component-details">
+						<li><em>{{row.cells[2].qText}}</em> {{layout.qHyperCube.qMeasureInfo[1].qFallbackTitle}}</li>
+						<li><em>{{row.cells[3].qText}}</em> {{layout.qHyperCube.qMeasureInfo[2].qFallbackTitle}}</li>
+						<li><em>{{row.cells[4].qText}}</em> {{layout.qHyperCube.qMeasureInfo[3].qFallbackTitle}}</li>
+						<li><em>{{row.cells[5].qText}}</em> {{layout.qHyperCube.qMeasureInfo[4].qFallbackTitle}}</li>
+					</ul>					
+				</section> <!-- .component-body -->
+
+				<footer class="component-footer">
+					<lui-button ng-click="row.cells[0].select()" ng-class="{'lui-bg-success':row.cells[0].selected}">Select</lui-button>
+				</footer> <!-- .component-footer -->
+			</li>
+		</ul> <!-- .component-list -->
+	</section>
+
+</div></div>
